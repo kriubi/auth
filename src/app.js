@@ -16,6 +16,27 @@ app.set('views', '/usr/src/app/src/views');
 app.get('/', (req, res) => {
 
     const { url, adm_user, store } = req.query;
+
+    const { code, api_address, store_host } = req.query;
+
+    let auth_callback = "http://" + VERCEL_URL + "/callback";
+
+    return res.status(200).render('landing-page', {
+        url,
+        adm_user,
+        store,
+        code,
+        api_address,
+        store_host,
+        CONSUMER_KEY,
+        auth_callback,
+    });
+
+});
+
+app.get('/callback', (req, res) => {
+
+    const { url, adm_user, store } = req.query;
     
     const { code, api_address, store_host } = req.query;
     

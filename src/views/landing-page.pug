@@ -1,0 +1,8 @@
+- var _url = url + '/auth.php?response_type=code&consumer_key=' + CONSUMER_KEY + '&callback=' + auth_callback;
+
+html
+    body
+        p= _url
+        p bem-vindo, #{adm_user}
+        p notei que o número da sua loja é #{store}
+        a(href=_url) "Instale agora"
