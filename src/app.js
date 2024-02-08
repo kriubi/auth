@@ -13,7 +13,7 @@ app.get('/', (req, res) => {
 });
 
 app.get('/test', (req, res) => {
-    return res.sendStatus(200);
+    return res.status(200).send(process.env.VERCEL_URL);
 });
 
 app.listen(PORT, () => {
