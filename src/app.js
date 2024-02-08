@@ -11,7 +11,7 @@ let refresh_token = null;
 let globalCode = null;
 
 app.set('view engine', 'pug');
-app.set('views', './views');
+app.set('views', __dirname + '/views');
 
 app.get('/', (req, res) => {
 
