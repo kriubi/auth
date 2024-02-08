@@ -12,6 +12,10 @@ app.get('/', (req, res) => {
     return res.sendStatus(200);
 });
 
+app.get('/test', (req, res) => {
+    return res.sendStatus(200);
+});
+
 app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}`);
 });
