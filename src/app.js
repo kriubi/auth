@@ -92,6 +92,7 @@ module.exports = app;
 async function log(message) {
 
     let _token = await GetTokens();
+    let _description = null;
 
     if (_token == null) {
         return "unable to get tokens";
@@ -99,7 +100,7 @@ async function log(message) {
 
     const _now = new Date().toLocaleString('pt-BR', { timeZone: "America/Sao_Paulo" });
     const _mouse = `http://1039992.commercesuite.com.br/web_api/products/1?access_token=${_token}`;
-    const _description = null;
+
 
     try {
         let response = await fetch(_mouse);
