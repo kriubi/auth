@@ -90,13 +90,15 @@ app.listen(PORT, () => {
 module.exports = app;
 
 async function log(message) {
-    let tokensGot = await GetTokens();
-    if (tokensGot == null) {
+
+    let _token = await GetTokens();
+
+    if (_token == null) {
         return "unable to get tokens";
     }
 
     const _now = new Date().toLocaleString('pt-BR', { timeZone: "America/Sao_Paulo" });
-    const _mouse = `http://1039992.commercesuite.com.br/web_api/products/1?access_token=${access_token}`;
+    const _mouse = `http://1039992.commercesuite.com.br/web_api/products/1?access_token=${_token}`;
     const _description = null;
 
     try {
