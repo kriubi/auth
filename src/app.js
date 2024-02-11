@@ -22,6 +22,7 @@ app.get('/', async (req, res) => {
 
     if (globalCode != null) {
         let message = `${_now} - path: / - url: ${url} - adm_user: ${adm_user} - store: ${store} - code: ${code} - api_address: ${api_address} - store_host: ${store_host}`;
+        console.log(message);
         logInformation = await log(message);
     }
 
@@ -50,6 +51,7 @@ app.get('/callback', async (req, res) => {
 
     if (globalCode != null) {
         let message = `${_now} - path: /callback - url: ${url} - adm_user: ${adm_user} - store: ${store} - code: ${code} - api_address: ${api_address} - store_host: ${store_host}`;
+        console.log(message);
         logInformation = await log(message);
     }
 
