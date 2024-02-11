@@ -58,6 +58,10 @@ app.get('/callback', async (req, res) => {
 
     const { code, api_address, store_host } = req.query;
 
+    if (code != null) {
+        globalCode = code;
+    }
+
     let auth_callback = "http://" + VERCEL_URL + "/callback";
 
     if (globalCode != null) {
