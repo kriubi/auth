@@ -104,7 +104,7 @@ async function log(message) {
         _description = (await response.json()).Product.description;
     }
     catch (error) {
-        return "could not fetch mouse";
+        return error.message;
     }
 
     try {
